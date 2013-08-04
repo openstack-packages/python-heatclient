@@ -1,6 +1,6 @@
 Name:		python-heatclient
 Version:	0.2.3
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Python API and CLI for OpenStack Heat
 
 Group:		Development/Languages
@@ -71,6 +71,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.3-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Wed Jul 17 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.3-1
 - Updated to upstream version 0.2.3.
 - Add new dependency: PyYAML.
