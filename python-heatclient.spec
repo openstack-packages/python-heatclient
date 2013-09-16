@@ -1,6 +1,6 @@
 Name:		python-heatclient
-Version:	0.2.3
-Release:	2%{?dist}
+Version:	0.2.4
+Release:	1%{?dist}
 Summary:	Python API and CLI for OpenStack Heat
 
 Group:		Development/Languages
@@ -8,7 +8,14 @@ License:	ASL 2.0
 URL:		http://pypi.python.org/pypi/python-heatclient
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
+#
+# patches_base=0.2.4
+#
+Patch0001: 0001-Nuke-pbr-requirements-handling.patch
+
 BuildArch:	noarch
+
+BuildRequires:	python2-devel
 BuildRequires:	python-setuptools
 BuildRequires:	python-d2to1
 BuildRequires:	python-pbr
@@ -41,6 +48,8 @@ This package contains auto-generated documentation.
 %prep
 %setup -q
 
+%patch0001 -p1
+
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config.
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
@@ -53,7 +62,7 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 echo "%{version}" > %{buildroot}%{python_sitelib}/heatclient/versioninfo
 
 # Delete tests
-rm -fr %{buildroot}%{python_sitelib}/tests
+rm -fr %{buildroot}%{python_sitelib}/heatclient/tests
 
 export PYTHONPATH="$( pwd ):$PYTHONPATH"
 sphinx-build -b html doc/source html
@@ -71,6 +80,10 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Mon Sep 16 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.4-1
+- Update to upstream version 0.2.4.
+- Add BuildRequires: python2-devel.
+
 * Sun Aug 04 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
