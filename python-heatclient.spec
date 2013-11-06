@@ -1,5 +1,5 @@
 Name:		python-heatclient
-Version:	0.2.4
+Version:	0.2.5
 Release:	1%{?dist}
 Summary:	Python API and CLI for OpenStack Heat
 
@@ -9,7 +9,7 @@ URL:		http://pypi.python.org/pypi/python-heatclient
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.4
+# patches_base=0.2.5
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 
@@ -80,6 +80,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Wed Nov 06 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.5-1
+- Update to upstream version 0.2.5
+
 * Mon Sep 16 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.4-1
 - Update to upstream version 0.2.4.
 - Add BuildRequires: python2-devel.
