@@ -12,6 +12,7 @@ Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 # patches_base=0.2.6
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
+Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
 
 BuildArch:	noarch
 
@@ -50,6 +51,7 @@ This package contains auto-generated documentation.
 %setup -q
 
 %patch0001 -p1
+%patch0002 -p1
 
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config.
