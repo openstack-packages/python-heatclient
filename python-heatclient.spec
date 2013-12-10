@@ -1,5 +1,5 @@
 Name:		python-heatclient
-Version:	0.2.5
+Version:	0.2.6
 Release:	1%{?dist}
 Summary:	Python API and CLI for OpenStack Heat
 
@@ -9,7 +9,7 @@ URL:		http://pypi.python.org/pypi/python-heatclient
 Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.5
+# patches_base=0.2.6
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 
@@ -25,6 +25,7 @@ Requires:	python-httplib2
 Requires:	python-iso8601
 Requires:	python-keystoneclient
 Requires:	python-prettytable
+Requires:   python-six
 Requires:	PyYAML
 
 %description
@@ -80,6 +81,10 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Tue Dec 10 2013 Jeff Peeler <jpeeler@redhat.com> 0.2.6-1
+- Update to upstream version 0.2.6
+- New dependency: python-six
+
 * Wed Nov 06 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.5-1
 - Update to upstream version 0.2.5
 
