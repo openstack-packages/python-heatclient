@@ -1,6 +1,6 @@
 Name:		python-heatclient
 Version:	0.2.6
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	Python API and CLI for OpenStack Heat
 
 Group:		Development/Languages
@@ -53,6 +53,9 @@ This package contains auto-generated documentation.
 %patch0001 -p1
 %patch0002 -p1
 
+# We provide version like this in order to remove runtime dep on pbr.
+sed -i s/REDHATHEATCLIENTVERSION/%{version}/ heatclient/__init__.py
+
 # Remove the requirements file so that pbr hooks don't add it
 # to distutils requires_dist config.
 rm -rf {test-,}requirements.txt tools/{pip,test}-requires
@@ -83,9 +86,10 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
-* Tue Dec 10 2013 Jeff Peeler <jpeeler@redhat.com> 0.2.6-1
+* Tue Dec 10 2013 Jeff Peeler <jpeeler@redhat.com> 0.2.6-2
 - Update to upstream version 0.2.6
 - New dependency: python-six
+- Remove runtime dependency on python-pbr
 
 * Wed Nov 06 2013 Jakub Ruzicka <jruzicka@redhat.com> 0.2.5-1
 - Update to upstream version 0.2.5
