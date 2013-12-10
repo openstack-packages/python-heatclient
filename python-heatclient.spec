@@ -1,12 +1,12 @@
-Name:		python-heatclient
-Version:	0.2.6
-Release:	2%{?dist}
-Summary:	Python API and CLI for OpenStack Heat
+Name:    python-heatclient
+Version: 0.2.6
+Release: 2%{?dist}
+Summary: Python API and CLI for OpenStack Heat
 
-Group:		Development/Languages
-License:	ASL 2.0
-URL:		http://pypi.python.org/pypi/python-heatclient
-Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
+Group:   Development/Languages
+License: ASL 2.0
+URL:     http://pypi.python.org/pypi/python-heatclient
+Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
 # patches_base=0.2.6
@@ -14,20 +14,20 @@ Source0:	http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
 
-BuildArch:	noarch
+BuildArch: noarch
 
-BuildRequires:	python2-devel
-BuildRequires:	python-setuptools
-BuildRequires:	python-d2to1
-BuildRequires:	python-pbr
+BuildRequires: python2-devel
+BuildRequires: python-setuptools
+BuildRequires: python-d2to1
+BuildRequires: python-pbr
 
-Requires:	python-argparse
-Requires:	python-httplib2
-Requires:	python-iso8601
-Requires:	python-keystoneclient
-Requires:	python-prettytable
-Requires:   python-six
-Requires:	PyYAML
+Requires: python-argparse
+Requires: python-httplib2
+Requires: python-iso8601
+Requires: python-keystoneclient
+Requires: python-prettytable
+Requires: python-six
+Requires: PyYAML
 
 %description
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -35,10 +35,10 @@ heatclient module), and a command-line script (heat). Each implements 100% of
 the OpenStack Heat API.
 
 %package doc
-Summary:	Documentation for OpenStack Heat API Client
-Group:		Documentation
+Summary: Documentation for OpenStack Heat API Client
+Group:   Documentation
 
-BuildRequires:	python-sphinx
+BuildRequires: python-sphinx
 
 %description doc
 This is a client for the OpenStack Heat API. There's a Python API (the
