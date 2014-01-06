@@ -1,6 +1,6 @@
 Name:    python-heatclient
 Version: 0.2.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -13,6 +13,7 @@ Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
+Patch0003: 0003-Add-support-for-resource_types.patch
 
 BuildArch: noarch
 
@@ -52,6 +53,7 @@ This package contains auto-generated documentation.
 
 %patch0001 -p1
 %patch0002 -p1
+%patch0003 -p1
 
 # We provide version like this in order to remove runtime dep on pbr.
 sed -i s/REDHATHEATCLIENTVERSION/%{version}/ heatclient/__init__.py
@@ -86,6 +88,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Mon Jan 06 2014 Jakub Ruzicka <jruzicka@redhat.com> 0.2.6-3
+- Add support for resource_types
+
 * Tue Dec 10 2013 Jeff Peeler <jpeeler@redhat.com> 0.2.6-2
 - Update to upstream version 0.2.6
 - New dependency: python-six

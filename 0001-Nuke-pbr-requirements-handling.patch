@@ -1,4 +1,4 @@
-From 3b64f761d0eaccb4fe3638191c89627e8446b9db Mon Sep 17 00:00:00 2001
+From 227e0bacc76c92e0755a13773a81ccd3853f0765 Mon Sep 17 00:00:00 2001
 From: Jakub Ruzicka <jruzicka@redhat.com>
 Date: Mon, 16 Sep 2013 17:25:48 +0200
 Subject: [PATCH] Nuke pbr requirements handling
