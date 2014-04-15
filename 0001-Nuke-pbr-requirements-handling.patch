@@ -1,30 +1,12 @@
-From 227e0bacc76c92e0755a13773a81ccd3853f0765 Mon Sep 17 00:00:00 2001
+From 51926c18818da2ac832ca2b38e4864a169435bc4 Mon Sep 17 00:00:00 2001
 From: Jakub Ruzicka <jruzicka@redhat.com>
 Date: Mon, 16 Sep 2013 17:25:48 +0200
 Subject: [PATCH] Nuke pbr requirements handling
 
 ---
- requirements.txt      |  8 --------
- setup.py              |  1 -
- test-requirements.txt | 15 ---------------
- 3 files changed, 24 deletions(-)
- delete mode 100644 requirements.txt
- delete mode 100644 test-requirements.txt
+ setup.py | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/requirements.txt b/requirements.txt
-deleted file mode 100644
-index 6947270..0000000
---- a/requirements.txt
-+++ /dev/null
-@@ -1,8 +0,0 @@
--pbr>=0.5.21,<1.0
--argparse
--httplib2
--iso8601>=0.1.8
--PrettyTable>=0.6,<0.8
--python-keystoneclient>=0.4.1
--PyYAML>=3.1.0
--six>=1.4.1
 diff --git a/setup.py b/setup.py
 index 70c2b3f..afab729 100755
 --- a/setup.py
@@ -35,24 +17,3 @@ index 70c2b3f..afab729 100755
  setuptools.setup(
 -    setup_requires=['pbr'],
      pbr=True)
-diff --git a/test-requirements.txt b/test-requirements.txt
-deleted file mode 100644
-index 121780d..0000000
---- a/test-requirements.txt
-+++ /dev/null
-@@ -1,15 +0,0 @@
--# Install bounded pep8/pyflakes first, then let flake8 install
--pep8==1.4.5
--pyflakes>=0.7.2,<0.7.4
--flake8==2.0
--hacking>=0.8.0,<0.9
--coverage>=3.6
--discover
--fixtures>=0.3.14
--mock>=1.0
--mox>=0.5.3
--mox3>=0.7.0
--sphinx>=1.1.2
--testscenarios>=0.4
--testrepository>=0.0.17
--testtools>=0.9.32
