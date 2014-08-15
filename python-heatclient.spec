@@ -39,6 +39,7 @@ Summary: Documentation for OpenStack Heat API Client
 Group:   Documentation
 
 BuildRequires: python-sphinx
+BuildRequires: python-oslo-sphinx
 
 %description doc
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -86,6 +87,9 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Fri Aug 15 2014 Derek Higgins <derekh@redhat.com> - XXX
+- Add dependency on python-oslo-sphinx
+
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.9-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
 
