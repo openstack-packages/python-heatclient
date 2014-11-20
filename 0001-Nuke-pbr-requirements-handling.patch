@@ -1,4 +1,4 @@
-From 12f63ad7ac611a6cb5c0946d8e6972fb2a82c040 Mon Sep 17 00:00:00 2001
+From 4bc6bf468d560df13b2586087ef3c93a73d7db98 Mon Sep 17 00:00:00 2001
 From: Jakub Ruzicka <jruzicka@redhat.com>
 Date: Mon, 16 Sep 2013 17:25:48 +0200
 Subject: [PATCH] Nuke pbr requirements handling
@@ -17,6 +17,3 @@ index 7363757..09230a0 100755
  setuptools.setup(
 -    setup_requires=['pbr'],
      pbr=True)
--- 
-1.9.3
-

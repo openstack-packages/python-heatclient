@@ -1,6 +1,6 @@
 Name:    python-heatclient
-Version: 0.2.9
-Release: 2%{?dist}
+Version: XXX
+Release: XXX{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
@@ -9,7 +9,7 @@ URL:     http://pypi.python.org/pypi/python-heatclient
 Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
 
 #
-# patches_base=0.2.9
+# patches_base=0.2.12
 #
 Patch0001: 0001-Nuke-pbr-requirements-handling.patch
 Patch0002: 0002-Remove-runtime-dependency-on-python-pbr.patch
@@ -40,6 +40,7 @@ Group:   Documentation
 
 BuildRequires: python-sphinx
 BuildRequires: python-oslo-sphinx
+BuildRequires: git
 
 %description doc
 This is a client for the OpenStack Heat API. There's a Python API (the
@@ -49,7 +50,7 @@ the OpenStack Heat API.
 This package contains auto-generated documentation.
 
 %prep
-%setup -q -n python-heatclient-%{upstream_version}
+%setup -q -n %{name}-%{upstream_version}
 
 %patch0001 -p1
 %patch0002 -p1
@@ -68,6 +69,10 @@ rm -rf {test-,}requirements.txt tools/{pip,test}-requires
 %{__python} setup.py install -O1 --skip-build --root %{buildroot}
 echo "%{version}" > %{buildroot}%{python_sitelib}/heatclient/versioninfo
 
+# Install bash completion scripts
+mkdir -p %{buildroot}%{_sysconfdir}/bash_completion.d/
+install -m 644 -T tools/heat.bash_completion %{buildroot}%{_sysconfdir}/bash_completion.d/python-heatclient
+
 # Delete tests
 rm -fr %{buildroot}%{python_sitelib}/heatclient/tests
 
@@ -82,13 +87,25 @@ rm -fr html/.doctrees html/.buildinfo
 %{_bindir}/heat
 %{python_sitelib}/heatclient
 %{python_sitelib}/*.egg-info
+%{_sysconfdir}/bash_completion.d/python-heatclient
 
 %files doc
 %doc html
 
 %changelog
-* Fri Aug 15 2014 Derek Higgins <derekh@redhat.com> - XXX
-- Add dependency on python-oslo-sphinx
+* Thu Sep 26 2014 Ryan Brown <rybrown@redhat.com> - 0.2.12-1
+- Bump to 0.2.12 client release
+
+* Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-2
+- Remove patch and use sed in %prep to fix oslosphinx import instead
+
+* Mon Sep 22 2014 Ryan Brown <rybrown@redhat.com> - 0.2.11-1
+- Bump to new (0.2.11) client release
+- Add git to BuildRequires
+
+* Thu Sep 18 2014 Ryan Brown <rybrown@redhat.com> - 0.2.10-1
+- Bump to new (0.2.10) client release
+- Include bash completion file (rhbz #1140842)
 
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.2.9-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
