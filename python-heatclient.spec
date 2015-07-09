@@ -40,6 +40,9 @@ Group:   Documentation
 
 BuildRequires: python-sphinx
 BuildRequires: python-oslo-sphinx
+BuildRequires: python-oslo-serialization
+BuildRequires: python-oslo-utils
+BuildRequires: python-oslo-i18n
 BuildRequires: git
 
 %description doc
