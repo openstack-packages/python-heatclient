@@ -22,6 +22,9 @@ Requires: python-keystoneclient
 Requires: python-prettytable
 Requires: python-pbr
 Requires: python-six
+Requires: python-oslo-serialization
+Requires: python-oslo-utils
+Requires: python-oslo-i18n
 Requires: PyYAML
 
 %description
