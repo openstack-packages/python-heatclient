@@ -1,0 +1,8 @@
+Verified+1: rdo-ci-jenkins <brad+jenkins@redhat.com>
+Code-Review+2: Gaël Chamoulaud <gchamoul@redhat.com>
+Verified+1: Gaël Chamoulaud <gchamoul@redhat.com>
+Submitted-by: Gaël Chamoulaud <gchamoul@redhat.com>
+Submitted-at: Tue, 21 Jul 2015 12:38:46 +0200
+Reviewed-on: https://review.gerrithub.io/240741
+Project: openstack-packages/python-heatclient
+Branch: refs/heads/rpm-master
