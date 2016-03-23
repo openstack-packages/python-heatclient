@@ -1,12 +1,13 @@
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 Name:    python-heatclient
-Version: XXX
-Release: XXX
+Version: 1.0.0
+Release: 1%{?dist}
 Summary: Python API and CLI for OpenStack Heat
 
 Group:   Development/Languages
 License: ASL 2.0
 URL:     http://pypi.python.org/pypi/python-heatclient
-Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}.tar.gz
+Source0: http://tarballs.openstack.org/%{name}/%{name}-%{version}%{?milestone}.tar.gz
 
 BuildArch: noarch
 
@@ -85,3 +86,5 @@ rm -fr html/.doctrees html/.buildinfo
 %doc html
 
 %changelog
+* Wed Mar 23 2016 RDO <rdo-list@redhat.com> 1.0.0-0.1
+ -  Rebuild for Mitaka 
